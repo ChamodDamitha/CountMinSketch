@@ -32,18 +32,26 @@ public class Main {
         countMinSketch.insert(300);
         countMinSketch.insert(300);
  
-        for(int i = 0; i < 100; i++){
-            countMinSketch.insert(i);
-        }
+//        for(int i = 0; i < 100; i++){
+//            countMinSketch.insert(i);
+//        }
 
 
         System.out.println("Count of 120 : " + countMinSketch.approximateCount(120));
         System.out.println("Count of 550 : " + countMinSketch.approximateCount(550));
         System.out.println("Count of 300 : " + countMinSketch.approximateCount(300));
 
+        countMinSketch.remove(300);
+        countMinSketch.remove(300);
+        countMinSketch.remove(120);
 
-        for(int i = 0; i < 100; i++){
-            System.out.println("Count of " + i + " : " + countMinSketch.approximateCount(i));
-        }
+
+        System.out.println("Count of 120 : " + countMinSketch.approximateCount(120));
+        System.out.println("Count of 550 : " + countMinSketch.approximateCount(550));
+        System.out.println("Count of 300 : " + countMinSketch.approximateCount(300));
+
+//        for(int i = 0; i < 100; i++){
+//            System.out.println("Count of " + i + " : " + countMinSketch.approximateCount(i));
+//        }
     }
 }

@@ -120,6 +120,24 @@ public class CountMinSketch<E> {
     }
 
     /**
+     * Removes the count of an item from the count min sketch
+     * calculate hash values for number of row in the count array
+     * compute indices in the range of [0, width) from those hash values
+     * decrement each value in the cell of relevant row and index (e.g. countArray[row][index]--)
+     *
+     * @param item
+     */
+    public void remove(E item) {
+        int[] hashValues = getHashValues(item);
+        int index;
+
+        for (int i = 0; i < depth; i++) {
+            index = getArrayIndex(hashValues[i]);
+            countArray[i][index]--;
+        }
+    }
+
+    /**
      * Compute the approximate count for a given item
      * Check the relevant cell values for the given item by hashing it to cell indices
      * Then take the minimum out of those values
