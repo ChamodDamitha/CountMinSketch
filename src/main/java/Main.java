@@ -17,7 +17,7 @@
 */
 public class Main {
     public static void main(String[] args) {
-        CountMinSketch<Integer> countMinSketch = new CountMinSketch<Integer>(0.01, 0.1);
+        CountMinSketch<Integer> countMinSketch = new CountMinSketch<Integer>(0.03, 0.99);
 
         countMinSketch.insert(120);
         countMinSketch.insert(120);
